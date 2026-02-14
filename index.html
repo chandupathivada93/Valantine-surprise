@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="valentineApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💘 Valentine Surprise</title>
+
+  <!-- AngularJS CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-controller="ValentineController">
+
+  <!-- Floating Hearts Background -->
+  <div class="hearts">
+    <span ng-repeat="h in hearts track by $index">💖</span>
+  </div>
+
+  <!-- Main Valentine Card -->
+  <div class="card" ng-if="!accepted">
+
+    <h1>Will You Be My Valentine? 💝</h1>
+
+    <div class="gif">
+      🐻🌹
+    </div>
+
+    <!-- Button Box (NO moves inside this only) -->
+    <div class="buttons" id="buttonBox">
+
+      <!-- YES Button (Fixed Size) -->
+      <button class="yesBtn"
+              ng-click="sayYes()">
+        Yes 💖
+      </button>
+
+      <!-- NO Button (Moves inside white card only) -->
+      <button class="noBtn"
+              ng-mouseenter="moveNo()"
+              ng-mousemove="moveNo()"
+              ng-style="{'top': noTop + 'px', 'left': noLeft + 'px'}">
+        No 💔
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Final Love Screen -->
+  <div class="card loveScreen" ng-if="accepted">
+    <h1>Yayyyyy!! 😍💘</h1>
+    <h2>I Love You Forever My Sweet Heart ❤️🌹</h2>
+    <p>You made my Valentine special 💝</p>
+
+    <div class="finalGif">
+      🥰💐
+    </div>
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>

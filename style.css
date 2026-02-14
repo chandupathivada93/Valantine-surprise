@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Sans MS", cursive;
+  background: linear-gradient(to bottom right, #ffb6c1, #ff4d6d);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Floating Hearts Background */
+.hearts span {
+  position: absolute;
+  font-size: 25px;
+  animation: float 6s infinite;
+}
+
+.hearts span:nth-child(1) { left: 10%; animation-delay: 0s; }
+.hearts span:nth-child(2) { left: 30%; animation-delay: 1s; }
+.hearts span:nth-child(3) { left: 50%; animation-delay: 2s; }
+.hearts span:nth-child(4) { left: 70%; animation-delay: 3s; }
+.hearts span:nth-child(5) { left: 90%; animation-delay: 4s; }
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+}
+
+/* White Valentine Card */
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  text-align: center;
+  width: 420px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+}
+
+h1 {
+  color: #ff0055;
+}
+
+.gif {
+  font-size: 60px;
+  margin: 20px 0;
+}
+
+/* Button Box Area */
+.buttons {
+  margin-top: 30px;
+  position: relative;
+  height: 180px;
+  width: 100%;
+  overflow: hidden; /* NO button stays inside */
+}
+
+/* Buttons Common */
+button {
+  border: none;
+  padding: 15px 30px;
+  font-size: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+/* YES Button Fixed */
+.yesBtn {
+  background: #ff3366;
+  color: white;
+  position: absolute;
+  left: 30px;
+  top: 60px;
+}
+
+/* NO Button Jumping */
+.noBtn {
+  background: #444;
+  color: white;
+  position: absolute;
+  transition: 0.15s ease;
+}
+
+/* Final Screen Animation */
+.loveScreen {
+  animation: pop 1s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.5); }
+  100% { transform: scale(1); }
+}
+
+.finalGif {
+  font-size: 70px;
+  margin-top: 20px;
+}
